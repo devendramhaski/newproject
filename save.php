@@ -10,5 +10,5 @@ $g=$_POST['contact'];
 
  $query = "INSERT INTO usertable (fname,uname,pass,address,city,gender,contact) VALUES ('$a','$b','$c','$d','$e','$f','$g')";
 mysqli_query($con, $query);
-// header("location:signup.php");
-?> 
+header("location:login.php");
+?>  

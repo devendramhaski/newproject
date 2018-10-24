@@ -1,17 +1,29 @@
-<?php
-include("db.php");
-include("header.php");
-?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My new project</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div id="logo">
+	<div id="inside-logo">
+		<div id="title">
+			<div id="left-title"><h1>Super Market</h1></div>
+			
+		</div>
+
+	</div>
+</div>
 <div id="content">
-<div id="inside-content">
+
 			<div id="login-box"><h4>Login</h4>
-				<form action="logcon.php" method="post">
+				<form action="othe.php" method="post">
 					<table align="center">
 									<tr>
 										<td>Username</td>
 										<td> <input type="text" placeholder="Username" class ="input" name="username"></td>
 									</tr>
-									<tr><td></td></tr>
 									<tr>
 										<td>Password</td>
 										<td><input type="password" placeholder="password" class="input" name="password"></td>
@@ -20,23 +32,11 @@ include("header.php");
 										
 										<td colspan="2" align="right"><input type="submit" value="Login" name="login" class="btn"></td>
 									</tr>
-									<tr><td>
-								</table>
-					<p class="error">
-					<?php
-					if(isset($_SESSION['msg']))
-					{
-						echo $_SESSION['msg'];
-						unset($_SESSION['msg']);
-					}
-					
-					?>
-					</p>
-					</td></tr>
-						</form>
-					</div>
-					</div>
+					</table>
+				</form>
+			</div>
+</div>
 
-<?php
-include("footer.php");
-?>
+</div>
+</body>
+</html>

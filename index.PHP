@@ -1,59 +1,55 @@
 <?php
+include("db.php");
 include("header.php");
+$que_pro="SELECT * FROM product";
+if (isset($_GET['view_by_category']))
+{
+	$a=$_GET['view_by_category'];
+	$que_pro="SELECT * from product where category=$a";
+}
+$pro_result=mysqli_query($con,$que_pro);
 ?>
-<div id="content-box"> 
-<div id="inside-content-box"> 
-<div id="product-box">
-	<img src="images/33.jpg" height="210" width="200" >
-	<div id="botam">
-		<h3> Photo copy <br>Price:- 10500 <input type="submit" value="BUY" id="btn"></h3>
+<div id="content"> 
+	<div id="inside-content"> 
+	<?php
+	while ($pro_data=mysqli_fetch_assoc($pro_result))
+	 {
+ 					$price = $pro_data['product_price'];
+					$dis = $pro_data['discount'];
+					$a = $price*$dis/100;
+
+					$new_price = $price-$a;
+
+	?>
+
+					<div class="product-box">
+						<span class="discount"><?php echo $pro_data['discount']?> % Off</span>
+					
+						<img src="images/<?php echo $pro_data['product_image'];?>" />
+					
+						<div class="bottam_box">
+							<p><?php echo $pro_data['product_name']?></p>
+							<span class="old-price">&#8377 <?php echo $pro_data['product_price']?></span>
+							<span class="new-price">&#8377 <?php echo $new_price?></span><br/>
+						
+							<a href="add_to_cart.php?pid=<?php echo $pro_data['id'] ?>">Add to cart</a>
+							<a href="#" id="buy">Buy</a>
+						</div>
+						
+					</div>
+					
+<?php
+}
+
+?>	
 	</div>
-</div>
-<div id="product-box">
-	<img src="images/55.jpg" height="210" width="200" >
-	<div id="botam">
-		<h3>Sport <br>Price:- 2400 <input type="submit" value="BUY" id="btn"></h3>
-	</div>
-</div>
-<div id="product-box">
-	<img src="images/41.jpg" height="210" width="200" >
-	<div id="botam">
-		<h3>Bag<br>Price:- 1000 <input type="submit" value="BUY" id="btn"></h3>
-	</div>
-</div>
-<div id="product-box">
-	<img src="images/17.jpg" height="210" width="200" >
-	<div id="botam">
-		<h3>Bittergourd<br>Price:- 1000 <input type="submit" value="BUY" id="btn"></h3>
-	</div>
-</div>
-<div id="product-box">
-	<img src="images/14.jpg" height="210" width="200" >
-	<div id="botam">
-		<h3>Onion<br>Price:- 1000 <input type="submit" value="BUY" id="btn"></h3>
-	</div>
-</div>
-<div id="product-box">
-	<img src="images/21.jpg" height="210" width="200" >
-	<div id="botam">
-		<h3>Face Wash<br>Price:- 1000 <input type="submit" value="BUY" id="btn"></h3>
-	</div>
-</div>
-<div id="product-box">
-	<img src="images/12.jpg" height="210" width="200" >
-	<div id="botam">
-		<h3>Face Wash<br>Price:- 1000 <input type="submit" value="BUY" id="btn"></h3>
-	</div>
-</div>
-<div id="product-box">
-	<img src="images/13.jpg" height="210" width="200" >
-	<div id="botam">
-		<h3>Face Wash<br>Price:- 1000 <input type="submit" value="BUY" id="btn"></h3>
-	</div>
-</div>
-</div>
 </div>
 
 <?php
-include("footer.php");
+include("footer.php")
 ?>
+
+
+
+
+

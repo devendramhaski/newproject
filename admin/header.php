@@ -9,9 +9,9 @@
 	<div id="inside-topmenu">
 		<div id="left-topmenu">
 			<ul>
-				<li><a href="admin.php">Login</a>|</li>
+				<!-- <li><a href="index.php">Login</a>|</li> -->
 				<li><a href="">Sign Up</a>|</li>
-				<li><a href="../index.php">Logout</a></li>
+				<li><a href="logout.php">Logout</a></li>
 			</ul>
 		</div>
 
@@ -26,12 +26,13 @@
 		<div id="menu">
 			<ul>
 				<!-- <li><a href="index.php">Home</a></li> -->
-				<li><a href="#">Dashboard</a></li>
-				<li><a href="#">Add product</a></li>
-				<li><a href="#">View poduct</a></li>
-				<li><a href="add_category.php">Add category</a></li>
-				<li><a href="#">View category</a></li>
-				<li><a href="#">View user</a></li>
+				<li><a href="dashboard.php">Dashboard</a></li>
+				<li><a href="product.php">Add product</a></li>
+				<li><a href="view_product.php">View poduct</a></li>
+				<li><a href="category.php">Add category</a></li>
+				<li><a href="view_category.php">View category</a></li>
+				<li><a href="view_user.php">View user</a></li>
+				<li><a href="slider_image.php">Add-Image</a></li>
 			</ul>
 		</div>
 	</div>
