@@ -507,3 +507,35 @@ padding:0px !important;
 text-align: center;
 margin:0px !important;
 }
+#theme1{
+	height: 100px;
+	width: 100px;
+	background-color: red; 
+	float: left;
+	margin: 10px;
+		border-radius: 20px;
+}
+#theme2{
+	height: 100px;
+	width: 100px;
+	background-color: blue; 
+	float: left;
+	margin: 10px;
+	border-radius: 20px;
+}
+#theme3{
+	height: 100px;
+	width: 100px;
+	background-color:green; 
+	float: left;
+	margin: 10px;
+		border-radius: 20px;
+}
+#theme4{
+	height: 100px;
+	width: 100px;
+	background-color:black; 
+	margin: 10px;
+	float: left;
+		border-radius: 20px;
+}

@@ -21,33 +21,13 @@ $result_slider = mysqli_query($con, $slider);
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" type="text/css" href="swaipar.css">
 	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="theme.js"></script>
 	<script type="text/javascript" src="js/swiper.js"></script>
 
-		<script>
-		$(document).ready(function(){
-
-		    var swiper = new Swiper('.swiper-container', {
-		    	loop: true,
-		    	 effect: 'coverflow',
-		    	 autoplay: {
-		    	        delay: 2500,
-		    	        disableOnInteraction: false,
-		    	      },
-		      navigation: {
-		        nextEl: '.swiper-button-next',
-		        prevEl: '.swiper-button-prev'
-		      },
-		      // pagination: {
-		      //         el: '.swiper-pagination',
-		      //         type: 'fraction'
-		      //       }
-		    });
-		});
-	  </script>
 </head>
 <body>
 
-<div id="topmenu">
+<div id="topmenu" >
 	<div id="inside-topmenu">
 		<div id="left-topmenu">
 		<?php
@@ -61,7 +41,8 @@ $result_slider = mysqli_query($con, $slider);
 		</div>
 		<div id="right-topmenu">
 			<ul>
-				<li><a class="username" href="edit_profile.php"><?php echo $_SESSION['uname'] ?></a></li>
+				<li><a href="themes.php">Themes</a></li>
+				<li><a class="username" href="edit_profile.php"><?php echo $_SESSION['uname'] ?></a>|</li>
 				<li><a href="my_cart.php">Cart<span > (<?php echo $total ?>)</span></a>|</li>
 				<!-- <li><a href="#">Wishlist</a>|</li> -->
 				
@@ -139,8 +120,34 @@ $result_slider = mysqli_query($con, $slider);
 					?>
      
     </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
   </div>
 		</div>
+
+		<script>
+		$(document).ready(function(){
+			
+
+		    var swiper = new Swiper('.swiper-container', {
+		    	loop: true,
+		    	 effect: 'coverflow',
+		    	 autoplay: {
+		    	        delay: 2500,
+		    	        disableOnInteraction: false,
+		    	      },
+		      navigation: {
+		        nextEl: '.swiper-button-next',
+		        prevEl: '.swiper-button-prev'
+		      },
+		      pagination: {
+		              el: '.swiper-pagination',
+		              type: 'fraction'
+		            }
+		    });
+		});
+	  </script>
 
 	</div>
 </div>

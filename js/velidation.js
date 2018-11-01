@@ -42,9 +42,19 @@ $(document).ready(function(){
 			$("#re_pass_msg").html("Enter your Re-Password");
 			x=false;
 		}
-		else{
-			$("#re_pass_msg").html("");
-			
+		
+		else
+		{
+			if(c != d)
+			{
+				$("#re_pass_msg").html("Enter Correct Re-Password");
+				x=false;
+			}
+			else
+			{
+				$("#re_pass_msg").html("");
+				
+			}
 		}
 
 		if (e=="") {
